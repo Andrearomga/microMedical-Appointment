@@ -47,9 +47,11 @@ class MySQLMedicalAppointmentsRepository(MedicalAppointmentsPort):
             return {"message": str(e), "status": "error"},
 
     def create_cita(self, cita: MedicalAppointments):
+        print("GUandando cita medica")
+        print(cita)
         try:
             if(cita['IdMedicalAppointment'] == 0):
-                print("Crear")
+            
                 new = Model(
                     IdMedicalAppointment=cita['IdMedicalAppointment'],
                     IdBaby=cita['IdBaby'],

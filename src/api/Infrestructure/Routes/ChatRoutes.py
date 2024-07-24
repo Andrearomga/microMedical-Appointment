@@ -15,7 +15,7 @@ chat_route = Blueprint('chat_route', __name__)
 @chat_route.route('/list', methods=['GET'])
 # @token_required
 def get_all():    
-    return jsonIfy(list_all_controller.run()[0])
+    return jsonIfy(list_all_controller.run())
 
 @chat_route.route('/save', methods=['POST'])
 # @token_required

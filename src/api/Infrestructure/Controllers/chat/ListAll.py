@@ -7,4 +7,7 @@ class ListAllController:
         self.use_case = UseCase(repository)
 
     def run(self):
-        return self.use_case.run()
+        data =self.use_case.run()
+        print("Chat desde el controllerListAll")
+        print(data)
+        return data

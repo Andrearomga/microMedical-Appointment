@@ -54,6 +54,7 @@ class MySQLChatRepository(ChatPort):
             return {"message": str(e), "status": "error"},
 
     def list(self):
+        print("Listando")
         try:
             chats = self.db.query(Model).all()
             value = [{
@@ -64,12 +65,13 @@ class MySQLChatRepository(ChatPort):
                 "text": item.text,
                 "username": item.username,
             } for item in chats]
-            
+            print("Lstando chats")
+            print(value)
             self.db.commit()
             return {
                 "error": False,
                 "status": 200,
-                "message": f"Se encontraron {len(value)} citas médicas",
+                # "message": f"Se encontraron {len(value)} citas médicas",
                 "value": value,
             }
         
