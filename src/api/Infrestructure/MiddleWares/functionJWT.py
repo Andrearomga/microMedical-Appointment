@@ -4,7 +4,7 @@ def validate_token(token: str):
     
     print(token)
     
-    url = "http://192.168.0.24:7000/user/validate/token"    
+    url = "http://autentication:7000/user/validate/token"    
     payload = {
         "token": token,
     }
